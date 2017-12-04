@@ -1,5 +1,16 @@
 body {
+  background-image: url("https://farm6.staticflickr.com/5584/15092826117_89d1bd825b_k.jpg");
+  background-size: cover;
   font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  width: 100%;
 }
 
 .navbox {
@@ -8,6 +19,7 @@ body {
   border-radius: 5px;
   color: white;
   display: inline-block;
+  opacity: 0.6;
   padding-left: 10px;
   padding-right: 10px;
   text-decoration: none;
@@ -17,4 +29,5 @@ body {
   background-color: white;
   border-radius: 5px;
   color: black;
+  opacity: 0.8;
 }
