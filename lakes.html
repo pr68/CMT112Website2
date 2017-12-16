@@ -1,28 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Lake District</title>
-  </head>
-  <body>
-    <header>
-      <h1>Lake District</h1>
-      <h2>Lakes</h2>
-    </header>
-    <nav>
-      <a href="location.html" class="navbox">Location</a>
-      <a href="lakes.html" class="navbox">Lakes</a>
-      <a href="fells.html" class="navbox">Fells</a>
-      <a href="links.html" class="navbox">Links</a>
-      <a href="travel.html" class="navbox">Travel</a>
-    </nav>
-    <article>
-      <select name="Lakes">
-        <option value="Windemere">Windemere</option>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Lake District</title>
+</head>
+
+<body>
+  <header>
+    <h1>Lake District</h1>
+    <h2>Lakes</h2>
+  </header>
+  <nav>
+    <a href="location.html" class="navbox">Location</a>
+    <a href="lakes.html" class="navbox">Lakes</a>
+    <a href="fells.html" class="navbox">Fells</a>
+    <a href="links.html" class="navbox">Links</a>
+    <a href="travel.html" class="navbox">Travel</a>
+  </nav>
+  <article>
+    <select id="lakeselector">
+        <option value="Windermere">Windermere</option>
         <option value="Coniston Water">Coniston Water</option>
       </select>
-    </article>
-    <footer></footer>
-  </body>
+    <button id="lakebutton">Enter</button>
+    <img id="wikiimg">
+  </article>
+  <footer></footer>
+  <script type="text/javascript">
+    document.getElementById('lakebutton').addEventListener('click', wikifunc);
+
+
+
+    var processResponse = function(data) {
+      console.log(data.query.pages[0].original.source);
+      document.getElementById('wikiimg').src = data.query.pages[0].original.source;
+    }
+
+    function wikifunc() {
+
+
+      var encodeParameters = function(params) {
+        var strArray = [];
+        for (var key in params) {
+          if (params.hasOwnProperty(key)) {
+            var paramString = encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+            strArray.push(paramString);
+          }
+        }
+        return strArray.join('&');
+      }
+
+      var query = document.getElementById('lakeselector').value;
+
+      var parameters = {
+        format: 'json',
+        formatversion: 2,
+        action: 'query',
+        prop: 'pageimages',
+        piprop: 'original',
+        titles: query,
+        redirects: '',
+        callback: 'processResponse'
+      }
+
+      var imgparams = {
+        prop: 'pageimages',
+        piprop: 'original'
+      }
+
+      var base_url = 'https://en.wikipedia.org/w/api.php'
+      var query_url = base_url + '?' + encodeParameters(parameters) + '&' + encodeParameters(imgparams)
+
+      console.log(query_url);
+
+      var script = document.createElement('script')
+      script.src = query_url;
+      document.getElementsByTagName('head')[0].appendChild(script);
+    }
+  </script>
+</body>
+
 </html>
