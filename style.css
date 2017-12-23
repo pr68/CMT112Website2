@@ -50,6 +50,10 @@ article {
   height: 640px;
 }
 
+#locmap {
+  height: 320px;
+}
+
 img {
   max-width: 80%;
   display: block;

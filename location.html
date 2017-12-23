@@ -25,7 +25,7 @@
     <div id="locationmap">
 
     </div>
-    <div id="wiki">
+    <div id="wikitxt">
 
     </div>
   </article>
@@ -41,51 +41,8 @@
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1IjoicHI2OCIsImEiOiJjamIyMXpkZXc4dDE5MndxZW44czVhaXBkIn0.0sfaLuXhICPEABMRJjc2Pw'
     }).addTo(mymap);
-
-    var processResponse = function(data) {
-      var txt = data.query.pages[0].extract;
-      txtStripped = txt.replace(/<(?:.|\n)*?>/gm, '');
-      try{
-        document.getElementById('wiki').textContent = txtStripped;
-      }
-      catch(err) {
-        document.getElementById('wiki').textContent = err.message;
-      }
-    }
-
-    var encodeParameters = function(params) {
-      var strArray = [];
-      for (var key in params) {
-        if (params.hasOwnProperty(key)) {
-          var paramString = encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
-          strArray.push(paramString);
-        }
-      }
-      return strArray.join('&');
-    }
-
-    var query = 'Lake District';
-
-    var parameters = {
-      format: 'json',
-      formatversion: 2,
-      action: 'query',
-      prop: 'extracts',
-      exintro: '',
-      titles: query,
-      redirects: '',
-      callback: 'processResponse'
-    }
-
-    var base_url = 'https://en.wikipedia.org/w/api.php'
-    var query_url = base_url + '?' + encodeParameters(parameters);
-
-    console.log(query_url);
-
-    var script = document.createElement('script')
-    script.src = query_url;
-    document.getElementsByTagName('head')[0].appendChild(script);
   </script>
+  <script type="text/javascript" src="javascript/wikitxt.js"></script>
 </body>
 
 </html>
