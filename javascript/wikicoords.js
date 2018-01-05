@@ -22,6 +22,7 @@ var processCoordResponse = function(data) {
   console.log(data.query.pages[0].coordinates[0].lon);
   var lat = data.query.pages[0].coordinates[0].lat;
   var lon = data.query.pages[0].coordinates[0].lon;
+//  document.getElementById('locmap').style.display = 'block';
   mymap.setView([lat, lon], 12);
   var marker = L.marker([lat, lon]).addTo(mymap);
   marker.bindPopup(document.getElementById('selector').value).openPopup();

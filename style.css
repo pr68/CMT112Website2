@@ -44,6 +44,12 @@ article {
   margin: 15px;
   padding: 10px;
   max-width: 100%;
+  display: grid;
+  grid-template-areas: "selec selec"
+  "wikitxt wikiimg"
+  "locmap locmap";
+  grid-template-columns: 40% 60%;
+  justify-content: center;
 }
 
 #locationmap {
@@ -51,10 +57,29 @@ article {
 }
 
 #locmap {
+  border-radius: 5px;
   height: 320px;
+  grid-area: locmap;
+  padding: inherit;
+  /*display: none;*/
 }
 
 img {
   max-width: 80%;
   display: block;
+}
+
+#selec {
+  grid-area: selec;
+}
+
+#wikiimg {
+  border-radius: 5px;
+  grid-area: wikiimg;
+  padding: inherit;
+}
+
+#wikitxt {
+  grid-area: wikitxt;
+  padding: inherit;
 }

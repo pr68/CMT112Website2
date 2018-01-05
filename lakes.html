@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
   <title>Lake District</title>
 </head>
 
@@ -20,19 +22,54 @@
     <a href="travel.html" class="navbox">Travel</a>
   </nav>
   <article>
+    <div class="selec">
     <select id="selector">
-        <option value="Windermere">Windermere</option>
-        <option value="Coniston Water">Coniston Water</option>
-      </select>
+      <option value="Bassenthwaite Lake">Bassenthwaite Lake</option>
+      <option value="Blea Water">Blea Water</option>
+      <option value="Blelham Tarn">Blelham Tarn</option>
+      <option value="Brotherswater">Brotherswater</option>
+      <option value="Burnmoor Tarn">Burnmoor Tarn</option>
+      <option value="Buttermere">Buttermere</option>
+      <option value="Cogra Moss">Cogra Moss</option>
+      <option value="Coniston Water">Coniston Water</option>
+      <option value="Crummock Water">Crummock Water</option>
+      <option value="Derwent Water">Derwent Water</option>
+      <option value="Devoke Water">Devoke Water</option>
+      <option value="Easedale Tarn">Easdale Tarn</option>
+      <option value="Elter Water">Elter Water</option>
+      <option value="Ennerdale Water">Ennerdale Water</option>
+      <option value="Esthwaite Water">Esthwaite Water</option>
+      <option value="Grasmere">Grasmere</option>
+      <option value="Grisedale Tarn">Grisedale Tarn</option>
+      <option value="Haweswater">Haweswater</option>
+      <option value="Hayeswater">Hayeswater</option>
+      <option value="Kentmere Reservoir">Kentmere Reservoir</option>
+      <option value="Levers Water">Levers Water</option>
+      <option value="Loweswater">Loweswater</option>
+      <option value="Over Water">Over Water</option>
+      <option value="Rydal Water">Rydal Water</option>
+      <option value="Seathwaite Tarn">Seathwaite Tarn</option>
+      <option value="Tarn Hows">Tarn Hows</option>
+      <option value="Thirlmere">Thirlmere</option>
+      <option value="Ullswater">Ullswater</option>
+      <option value="Wastwater">Wastwater</option>
+      <option value="Wet Sleddale Reservoir">Wet Sleddale Reservoir</option>
+      <option value="Windermere">Windermere</option>
+    </select>
     <button id="but">Enter</button>
+  </div>
     <img id="wikiimg">
     <div id="wikitxt">
+
+    </div>
+    <div id="locmap">
 
     </div>
   </article>
   <footer></footer>
   <script type="text/javascript" src="javascript/wikiimg.js"></script>
   <script type="text/javascript" src="javascript/wikitxt.js"></script>
+  <script type="text/javascript" src="javascript/wikicoords.js"></script>
 </body>
 
 </html>
