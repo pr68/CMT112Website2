@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
@@ -13,11 +14,11 @@
       <h2>Fells</h2>
     </header>
     <nav>
-        <a href="location.html" class="navbox">Location</a>
-        <a href="lakes.html" class="navbox">Lakes</a>
-        <a href="fells.html" class="navbox">Fells</a>
-        <a href="links.html" class="navbox">Links</a>
-        <a href="travel.html" class="navbox">Travel</a>
+        <a href="location.html" class="box">Location</a>
+        <a href="lakes.html" class="box">Lakes</a>
+        <a href="fells.html" class="box">Fells</a>
+        <a href="links.html" class="box">Links</a>
+        <a href="travel.html" class="box">Travel</a>
     </nav>
     <article>
       <div class="selec">
@@ -25,7 +26,7 @@
         <option value="Scafell Pike">Scafell Pike</option>
         <option value="Skiddaw">Skiddaw</option>
       </select>
-      <button id="but">Enter</button>
+      <button class="box" id="but">Enter</button>
       <img id="wikiimg">
       <div id="wikitxt">
 

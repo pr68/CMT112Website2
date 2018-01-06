@@ -5,7 +5,7 @@ if (document.getElementById('but') !== null) {
 }
 
 var mymap = L.map('locmap', {
-  center: [51, -3.12],
+  center: [54.5, -3.166667],
   zoom: 12
 });
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -22,7 +22,6 @@ var processCoordResponse = function(data) {
   console.log(data.query.pages[0].coordinates[0].lon);
   var lat = data.query.pages[0].coordinates[0].lat;
   var lon = data.query.pages[0].coordinates[0].lon;
-//  document.getElementById('locmap').style.display = 'block';
   mymap.setView([lat, lon], 12);
   var marker = L.marker([lat, lon]).addTo(mymap);
   marker.bindPopup(document.getElementById('selector').value).openPopup();
