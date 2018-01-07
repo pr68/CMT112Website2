@@ -25,6 +25,7 @@ var processCoordResponse = function(data) {
   mymap.setView([lat, lon], 12);
   var marker = L.marker([lat, lon]).addTo(mymap);
   marker.bindPopup(document.getElementById('selector').value).openPopup();
+  document.getElementById('locmap').style.visibility = 'visible';
 }
 
 function wikiCoordFunc() {

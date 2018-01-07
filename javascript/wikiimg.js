@@ -5,6 +5,8 @@ document.getElementById('but').addEventListener('click', wikiImgFunc);
 var processImgResponse = function(data) {
   console.log(data.query.pages[0].original.source);
   document.getElementById('wikiimg').src = data.query.pages[0].original.source;
+  document.getElementById('wikiimg').style.visibility = 'visible';
+  document.getElementById('wikiimg').title = document.getElementById('selector').value;
 }
 
 function wikiImgFunc() {
