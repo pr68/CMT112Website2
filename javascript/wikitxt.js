@@ -7,7 +7,7 @@ if (document.getElementById('but') !== null) {
 
 
 var processResponse = function(data) {
-  document.getElementById('wikitxt').style.display = 'inline-block';
+  document.getElementById('arthead').innerHTML = document.getElementById('selector').value;
   var txt = data.query.pages[0].extract;
   txtStripped = txt.replace(/<(?:.|\n)*?>/gm, '');
   try{
