@@ -19,8 +19,6 @@
     <a href="location.html" class="box active">Location</a>
     <a href="lakes.html" class="box">Lakes</a>
     <a href="fells.html" class="box">Fells</a>
-    <a href="links.html" class="box">Links</a>
-    <a href="travel.html" class="box">Travel</a>
   </nav>
   <article>
     <div id="locationmap">
@@ -30,8 +28,7 @@
 
     </div>
   </article>
-  <footer></footer>
-  <script type="text/javascript">
+  <script>
     var mymap = L.map('locationmap', {
       center: [54.5, -3.166667],
       zoom: 10
@@ -43,7 +40,8 @@
       accessToken: 'pk.eyJ1IjoicHI2OCIsImEiOiJjamIyMXpkZXc4dDE5MndxZW44czVhaXBkIn0.0sfaLuXhICPEABMRJjc2Pw'
     }).addTo(mymap);
   </script>
-  <script type="text/javascript" src="javascript/wikitxt.js"></script>
+  <script src="javascript/wikitxt.js"></script>
+  <script src="javascript/navbut.js"></script>
 </body>
 
 </html>

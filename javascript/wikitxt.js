@@ -38,7 +38,7 @@ if (document.getElementById('selector') !== null) {
 //generic parameters
 var parameters = {
   format: 'json',
-  formatversion: 2,
+  formatversion: 2, /*returns as an array*/
   action: 'query',
   titles: query,
   redirects: '',
