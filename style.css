@@ -1,8 +1,8 @@
 body {
-  background-image: url("https://c1.staticflickr.com/7/6098/6253180419_11b25994e3_b.jpg");
+  background-image: url("https://c1.staticflickr.com/7/6098/6253180419_11b25994e3_b.jpg");/*portrait*/
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-repeat: no-repeat; /*image only shown once*/
+  background-attachment: fixed; /*background is static when scrolled*/
   font-family: sans-serif;
 }
 
@@ -12,7 +12,7 @@ header {
 
 h2, h1 {
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 nav {
@@ -34,7 +34,7 @@ nav {
 
 article {
   background-color: white; /*fallback for background colour for browsers which don't support rgba*/
-  background-color: rgba(192,192,192,0.4);
+  background-color: rgba(192,192,192,0.4); /*opaque background*/
   border: 2px solid darkblue;
   border-radius: 10px;
   margin: 15px;
@@ -71,7 +71,7 @@ img {
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-  visibility: hidden;
+  visibility: hidden; /*doesn't display initialy, only after lake/fell is chosen*/
 }
 
 #wikitxt {
@@ -96,8 +96,8 @@ img {
 }
 
 #navlink {
-  display: none;
-  position: absolute;
+  display: none;/*doesn't appear until clicked*/
+  position: absolute; /*appears overlaying the the webpage*/
   z-index: 2;
   width: 100%;
   background-color: white;
@@ -114,7 +114,7 @@ img {
   text-decoration: none;
 }
 
-.active {
+.active { /*can't click on the link to the current page*/
   pointer-events: none;
   cursor: default;
   background-color: white;
@@ -122,19 +122,20 @@ img {
 
 }
 
+/*following code for desktop*/
 @media screen and (min-width : 1200px) {
   body {
-    background-image: url("https://farm6.staticflickr.com/5584/15092826117_89d1bd825b_k.jpg");
+    background-image: url("https://farm6.staticflickr.com/5584/15092826117_89d1bd825b_k.jpg");/*landscape*/
   }
 
-  .box:hover {
+  .box:hover {/*can't hover on a touchscreen*/
     background-color: white;
     color: darkblue;
     opacity: 0.8;
   }
 
   article {
-    display: grid;
+    display: grid; /*set out template for webpage*/
     grid-template-areas: "selec selec"
     "wikitxt wikiimg"
     "locmap locmap";
@@ -159,7 +160,7 @@ img {
   }
 
   #navbut {
-    display: none
+    display: none /*don't need dropdown on desktop*/
   }
 
   #navlink {
@@ -171,7 +172,7 @@ img {
   }
 
   .box {
-    display: inline-block;
+    display: inline-block; /*appear in a row on desktop*/
     width: auto;
   }
 }
